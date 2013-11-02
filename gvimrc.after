@@ -1,0 +1,6 @@
+"nerdtree window switch (crtl+w) hjkl or arrows
+map <A-Right> <C-W>l
+map <A-Left> <C-W>h
+
+" re-index our entire codebase each time we saved changes to a single file
+au BufWritePost *.c,*.cpp,*.h,*.rb silent! !ctags -R & " alternative http://www.vim.org/scripts/script.php?script_id=1343

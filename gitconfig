@@ -1,0 +1,21 @@
+[user]
+  name = Rafał Trojanowski
+  email = rafal@prograils.com
+
+[push]
+	default = simple
+[core]
+	editor = /usr/bin/vim
+[alias]
+  c = commit
+  cm = commit -m
+	co = checkout
+  m = merge
+  l = log
+  s = status
+  b = branch
+  co = checkout
+  d = diff
+  dc = diff --cached
+  who = shortlog -s --
+  ma = merge --abort

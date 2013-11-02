@@ -1,0 +1,93 @@
+" Apperance
+color molokai
+set guifont=Monaco:h12
+
+" Undo
+set undofile                " Save undo's after file closes
+set undodir=$HOME/.vimundo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
+
+set scrolloff=3
+
+set cursorline
+set number
+
+" Mappings
+inoremap <esc> <nop>
+inoremap jk <esc>
+
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+map <space> viw
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>: viw<esc>hbi:<esc>lel
+
+" make the command mode less annoying
+cnoremap <c-a> <Home>
+cnoremap <c-e> <End>
+cnoremap <c-k> <Up>
+cnoremap <c-j> <Down>
+cnoremap <c-h> <Left>
+cnoremap <c-l> <Right>
+cnoremap <c-d> <Del>
+
+" Idea from :
+" http://www.charlietanksley.net/blog/blog/2011/10/18/vim-navigation-with-lustyexplorer-and-lustyjuggler/
+" " Open CtrlP starting from a particular path, making it much
+" " more likely to find the correct thing first. mnemonic 'jump to
+" [something]'
+map ,jm :CtrlP app/models<CR>
+map ,jc :CtrlP app/controllers<CR>
+map ,jv :CtrlP app/views<CR>
+map ,jh :CtrlP app/helpers<CR>
+map ,jl :CtrlP lib<CR>
+map ,ja :CtrlP app/assets<CR>
+map ,jp :CtrlP public<CR>
+map ,js :CtrlP spec<CR>
+map ,jf :CtrlP fast_spec<CR>
+map ,jd :CtrlP db<CR>
+map ,jC :CtrlP config<CR>
+map ,jV :CtrlP vendor<CR>
+map ,jF :CtrlP factories<CR>
+map ,jT :CtrlP test<CR>
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" Borrowed from vimcasts, super useful----------------------------------------
+" " Bubble single lines
+nmap <C-k> ddkP
+nmap <C-j> ddp
+
+" Bubble multiple lines
+vmap <C-k> xkP`[V`]
+vmap <C-j> xp`[V`]
+
+" make tab key more better
+noremap <tab> v>
+noremap <s-tab> v<
+vnoremap <tab> >gv
+vnoremap <s-tab> <gv
+
+" and backspace as well
+noremap <backspace> v<
+noremap <s-backspace> v>
+vnoremap <backspace> <gv
+vnoremap <s-backspace> >gv
+
+" Ctags
+set tags=your_gem_tags_file_path,./tags,tags,;
+
+set noswapfile
+
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+" https://github.com/thoughtbot/dotfiles/blob/master/vimrc

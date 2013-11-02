@@ -1,0 +1,52 @@
+alias gvim="/Library/Documentation/Applications/MacVim.app/Contents/MacOS/Vim -g"
+
+alias off="sudo shutdown -h +60"
+
+alias e="exit"
+alias cd..="cd .."
+alias ..="cd .."
+
+alias showhiddenfiles="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
+alias dontshowhiddenfiles="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
+
+#Copy publickey to clipboard
+alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias prograilspubkey="cat ~/.ssh/id_rsa_prograils.pub | pbcopy | echo '=> Public prograils key copied to pasteboard.'"
+
+alias p="cd ~/Projects"
+
+alias g=gvim
+alias v=vim
+
+alias b=bundle
+alias bu='bundle update'
+alias rl=rails
+alias rs='rails server'
+alias rc='rails console'
+alias r=rake
+alias migrate='rake db:migrate'
+
+alias gs='git status'
+alias gl='git log'
+
+alias rmvimtemp='rm ~/.vim/_temp/*'
+alias aliases='vim ~/.aliases'
+alias vimrc='vim ~/.vimrc.after'
+alias gvimrc='vim ~/.gvimrc.after'
+alias gitconf='vim ~/.gitconfig'
+
+# Routing
+alias rr='rake routes'
+alias rrg='rake routes | grep'
+
+# Git
+alias gpls='git pull -u origin staging'
+alias gplm='git pull -u origin master'
+
+alias gphs='git push -u origin staging'
+alias gphm='git push -u origin master'
+
+# Rails
+alias st='ruby -Itest'
+
+alias getpath='echo -n $PWD|pbcopy|echo "current path copied to clipboard"'
