@@ -1,4 +1,33 @@
-" Apperance
+set nocompatible              " be iMproved
+filetype off                  " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My bundles here:
+"
+Bundle 'tomasr/molokai'
+Bundle 'mileszs/ack.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'ddollar/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'ervandew/supertab'
+Bundle 'jistr/vim-nerdtree-tabs'
+
+filetype plugin indent on     " required!
+
+let mapleader = ","
+
+set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+set noswapfile
+set scrolloff=3
+set cursorline
+set number
+
 color molokai
 set guifont=Monaco:h12
 
@@ -7,11 +36,6 @@ set undofile                " Save undo's after file closes
 set undodir=$HOME/.vimundo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
-
-set scrolloff=3
-
-set cursorline
-set number
 
 " Mappings
 inoremap <esc> <nop>
@@ -27,8 +51,14 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 
 map <space> viw
-nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>: viw<esc>hbi:<esc>lel
+
+" Wrap
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+nnoremap <leader>[ viw<esc>a]<esc>hbi[<esc>lel
+nnoremap <leader>{ viw<esc>a}<esc>hbi{<esc>lel
+nnoremap <leader>( viw<esc>a)<esc>hbi(<esc>lel
 
 " make the command mode less annoying
 cnoremap <c-a> <Home>
@@ -85,9 +115,38 @@ vnoremap <s-backspace> >gv
 " Ctags
 set tags=your_gem_tags_file_path,./tags,tags,;
 
-set noswapfile
-
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
 " https://github.com/thoughtbot/dotfiles/blob/master/vimrc
+
+" Tell vim to remember certain things when we exit
+"  '10  :  marks will be remembered for up to 10 previously edited files
+"  "100 :  will save up to 100 lines for each register
+"  :20  :  up to 20 lines of command-line history will be remembered
+"  %    :  saves and restores the buffer list
+"  n... :  where to save the viminfo files
+set viminfo='10,\"100,:20,%,n~/.viminfo
+
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
+
+" Customizations
+map <D-F> :Ack<space>
+
+" NERDCommenter mappings
+if has("gui_macvim") && has("gui_running")
+  map <D-/> <plug>NERDCommenterToggle<CR>')
+  imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
+else
+  map <leader>/' <plug>NERDCommenterToggle<CR>
+endif
