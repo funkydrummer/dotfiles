@@ -18,6 +18,15 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'ervandew/supertab'
 Bundle 'jistr/vim-nerdtree-tabs'
 
+" wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
+Bundle 'tpope/vim-endwise'
+
+" quoting/parenthesizing made simple
+Bundle 'tpope/vim-surround'
+
+Bundle 'tpope/vim-haml'
+Bundle 'kchmck/vim-coffee-script'
+
 filetype plugin indent on     " required!
 
 let mapleader = ","
@@ -49,6 +58,16 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+nnoremap <c-h>      <c-w>h
+nnoremap <c-j>      <c-w>j
+nnoremap <c-k>      <c-w>k
+nnoremap <c-l>      <c-w>l
+
+nnoremap j gj
+nnoremap k gk
+
+nnoremap <leader>e  :e!<enter>
 
 map <space> viw
 nnoremap <leader>: viw<esc>hbi:<esc>lel
@@ -93,12 +112,12 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Borrowed from vimcasts, super useful----------------------------------------
 " " Bubble single lines
-nmap <C-k> ddkP
-nmap <C-j> ddp
+"nmap <C-k> ddkP
+"nmap <C-j> ddp
 
 " Bubble multiple lines
-vmap <C-k> xkP`[V`]
-vmap <C-j> xp`[V`]
+"vmap <C-k> xkP`[V`]
+"vmap <C-j> xp`[V`]
 
 " make tab key more better
 noremap <tab> v>
@@ -145,8 +164,8 @@ map <D-F> :Ack<space>
 
 " NERDCommenter mappings
 if has("gui_macvim") && has("gui_running")
-  map <D-/> <plug>NERDCommenterToggle<CR>')
-  imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
+  map <D-/> <plug>NERDCommenterToggle<CR>
+  imap <D-/> jk<plug>NERDCommenterToggle<CR>i
 else
   map <leader>/' <plug>NERDCommenterToggle<CR>
 endif
