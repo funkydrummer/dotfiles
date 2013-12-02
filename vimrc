@@ -30,6 +30,8 @@ filetype plugin indent on     " required!
 
 let mapleader = ","
 
+set ruler
+
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set noswapfile
 set scrolloff=3
