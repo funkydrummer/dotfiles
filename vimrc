@@ -17,15 +17,14 @@ Bundle 'ddollar/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ervandew/supertab'
 Bundle 'jistr/vim-nerdtree-tabs'
-
-" wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
+Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
 
 " quoting/parenthesizing made simple
-Bundle 'tpope/vim-surround'
+" Bundle 'tpope/vim-surround'
 
-Bundle 'tpope/vim-haml'
-Bundle 'kchmck/vim-coffee-script'
+" Bundle 'tpope/vim-haml'
+" Bundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on     " required!
 
@@ -89,7 +88,7 @@ cnoremap <c-l> <Right>
 cnoremap <c-d> <Del>
 
 " provide tab completion for CSS class and ID names with dash
-set iskeyword+=-
+" set iskeyword+=-
 
 " Idea from :
 " http://www.charlietanksley.net/blog/blog/2011/10/18/vim-navigation-with-lustyexplorer-and-lustyjuggler/
