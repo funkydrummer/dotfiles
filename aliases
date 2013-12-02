@@ -55,3 +55,6 @@ alias gphm='git push -u origin master'
 alias gs='git status'
 alias gl='git log'
 alias gb='git branch'
+
+# Dev
+alias dbreload!='RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:migrate'
