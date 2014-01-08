@@ -41,6 +41,8 @@ set number
 color molokai
 set guifont=Monaco:h12
 
+set relativenumber
+
 " Undo
 set undofile                " Save undo's after file closes
 set undodir=$HOME/.vimundo " where to save undo histories
