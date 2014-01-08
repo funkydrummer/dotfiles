@@ -8,6 +8,7 @@ alias e="exit"
 alias cd..="cd .."
 alias ..="cd .."
 alias p="cd ~/Projects"
+alias dotfiles="cd ~/dotfiles"
 
 alias showhiddenfiles="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias dontshowhiddenfiles="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
