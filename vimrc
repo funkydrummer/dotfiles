@@ -90,7 +90,7 @@ cnoremap <c-l> <Right>
 cnoremap <c-d> <Del>
 
 " provide tab completion for CSS class and ID names with dash
-" set iskeyword+=-
+set iskeyword+=-
 
 " Idea from :
 " http://www.charlietanksley.net/blog/blog/2011/10/18/vim-navigation-with-lustyexplorer-and-lustyjuggler/
