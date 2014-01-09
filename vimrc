@@ -97,6 +97,9 @@ set iskeyword+=-
 " Intending
 map <Leader>i mmgg=G`m<CR>
 
+" Yank entire file
+map <Leader>y ggyGjk
+
 " Idea from :
 " http://www.charlietanksley.net/blog/blog/2011/10/18/vim-navigation-with-lustyexplorer-and-lustyjuggler/
 " " Open CtrlP starting from a particular path, making it much
