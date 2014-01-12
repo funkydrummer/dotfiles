@@ -185,5 +185,3 @@ function PrevBuffer()
 endfunction
 
 map <Leader>p :call PrevBuffer()<CR>
-
-au BufWritePost *.c,*.cpp,*.h silent! !ctags -R & 
