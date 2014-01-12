@@ -185,3 +185,8 @@ function PrevBuffer()
 endfunction
 
 map <Leader>p :call PrevBuffer()<CR>
+
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
