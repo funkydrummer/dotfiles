@@ -36,12 +36,10 @@ set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set noswapfile
 set scrolloff=3
 set cursorline
-set number
+set relativenumber
 
 color molokai
 set guifont=Monaco:h12
-
-set relativenumber
 
 " Undo
 set undofile                " Save undo's after file closes
@@ -181,3 +179,11 @@ if has("gui_macvim") && has("gui_running")
 else
   map <leader>/' <plug>NERDCommenterToggle<CR>
 endif
+
+function PrevBuffer()
+  b#
+endfunction
+
+map <Leader>p :call PrevBuffer()<CR>
+
+au BufWritePost *.c,*.cpp,*.h silent! !ctags -R & 

@@ -25,6 +25,7 @@ alias v=vim
 alias rmvimtemp='rm ~/.vim/_temp/*'
 alias aliases='vim ~/.aliases'
 alias vimrc='vim ~/.vimrc'
+alias gvimrc='vim ~/.gvimrc'
 alias gitconf='vim ~/.gitconfig'
 
 # Bundler
