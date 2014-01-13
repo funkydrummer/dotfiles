@@ -186,6 +186,9 @@ endfunction
 
 map <Leader>p :call PrevBuffer()<CR>
 
+" get rid of hashrocket 
+map <Leader>h :%s/:\([^=,'"]*\) =>/\1:/g<CR>
+
 :command WQ wq
 :command Wq wq
 :command W w
