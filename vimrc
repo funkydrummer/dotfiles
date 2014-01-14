@@ -19,6 +19,7 @@ Bundle 'ervandew/supertab'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
 
 " quoting/parenthesizing made simple
 " Bundle 'tpope/vim-surround'
@@ -188,8 +189,12 @@ map <Leader>p :call PrevBuffer()<CR>
 
 " get rid of hashrocket 
 map <Leader>h :%s/:\([^=,'"]*\) =>/\1:/g<CR>
+" and with interactive mode
+map <Leader>hi :%s/:\([^=,'"]*\) =>/\1:/gc<CR>
 
 :command WQ wq
 :command Wq wq
 :command W w
 :command Q q
+
+:set wildmenu
