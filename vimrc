@@ -192,6 +192,9 @@ map <Leader>h :%s/:\([^=,'"]*\) =>/\1:/g<CR>
 " and with interactive mode
 map <Leader>hi :%s/:\([^=,'"]*\) =>/\1:/gc<CR>
 
+" tabonly
+map <Leader>q :tabo<CR>
+
 command WQ wq
 command Wq wq
 command W w
