@@ -75,6 +75,7 @@ nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 nnoremap <leader>[ viw<esc>a]<esc>hbi[<esc>lel
 nnoremap <leader>{ viw<esc>a}<esc>hbi{<esc>lel
 nnoremap <leader>( viw<esc>a)<esc>hbi(<esc>lel
+nnoremap <leader>d viw<esc>A.inspect<esc>Iraise <esc>lel
 
 " make the command mode less annoying
 cnoremap <c-a> <Home>
@@ -215,6 +216,3 @@ map <leader>h :%s/:\([^=,'"]*\) =>/\1:/g<CR>
 map <leader>hi :%s/:\([^=,'"]*\) =>/\1:/gc<CR>
 
 map <leader>p :call PrevBuffer()<CR>
-
-
-
