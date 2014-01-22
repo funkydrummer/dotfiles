@@ -200,9 +200,6 @@ nnoremap <leader>e  :e!<enter>
 map <space> viw
 nnoremap <leader>: viw<esc>hbi:<esc>lel
 
-" Switch between the last two files
-nnoremap <leader><leader> <c-^>
-
 " Intending
 map <leader>i mmgg=G`m<CR>
 
