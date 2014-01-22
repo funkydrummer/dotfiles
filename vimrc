@@ -69,11 +69,6 @@ nnoremap <c-l>      <c-w>l
 nnoremap j gj
 nnoremap k gk
 
-nnoremap <leader>e  :e!<enter>
-
-map <space> viw
-nnoremap <leader>: viw<esc>hbi:<esc>lel
-
 " Wrap
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
@@ -92,12 +87,6 @@ cnoremap <c-d> <Del>
 
 " provide tab completion for CSS class and ID names with dash
 set iskeyword+=-
-
-" Intending
-map <Leader>i mmgg=G`m<CR>
-
-" Yank entire file
-map <Leader>y ggyGjk
 
 " Idea from :
 " http://www.charlietanksley.net/blog/blog/2011/10/18/vim-navigation-with-lustyexplorer-and-lustyjuggler/
@@ -145,9 +134,6 @@ vnoremap <s-backspace> >gv
 " Ctags
 set tags=your_gem_tags_file_path,./tags,tags,;
 
-" Switch between the last two files
-nnoremap <leader><leader> <c-^>
-
 " https://github.com/thoughtbot/dotfiles/blob/master/vimrc
 
 " Tell vim to remember certain things when we exit
@@ -185,16 +171,6 @@ function PrevBuffer()
   b#
 endfunction
 
-map <Leader>p :call PrevBuffer()<CR>
-
-" get rid of hashrocket 
-map <Leader>h :%s/:\([^=,'"]*\) =>/\1:/g<CR>
-" and with interactive mode
-map <Leader>hi :%s/:\([^=,'"]*\) =>/\1:/gc<CR>
-
-" tabonly
-map <Leader>q :tabo<CR>
-
 command WQ wq
 command Wq wq
 command W w
@@ -217,3 +193,31 @@ if has('statusline')
   let g:syntastic_enable_signs=1
   set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
+
+" leader
+nnoremap <leader>e  :e!<enter>
+
+map <space> viw
+nnoremap <leader>: viw<esc>hbi:<esc>lel
+
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+" Intending
+map <leader>i mmgg=G`m<CR>
+
+" Yank entire file
+map <leader>y ggyGjk
+
+" tabonly
+map <leader>q :tabo<CR>
+
+" get rid of hashrocket 
+map <leader>h :%s/:\([^=,'"]*\) =>/\1:/g<CR>
+" and with interactive mode
+map <leader>hi :%s/:\([^=,'"]*\) =>/\1:/gc<CR>
+
+map <leader>p :call PrevBuffer()<CR>
+
+
+
