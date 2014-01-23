@@ -216,3 +216,6 @@ map <leader>h :%s/:\([^=,'"]*\) =>/\1:/g<CR>
 map <leader>hi :%s/:\([^=,'"]*\) =>/\1:/gc<CR>
 
 map <leader>p :call PrevBuffer()<CR>
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·
