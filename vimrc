@@ -20,6 +20,7 @@ Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
+Bundle 'vim-ruby/vim-ruby'
 
 " quoting/parenthesizing made simple
 " Bundle 'tpope/vim-surround'
@@ -219,3 +220,5 @@ map <leader>p :call PrevBuffer()<CR>
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
+
+let g:ruby_indent_access_modifier_style="indent"
