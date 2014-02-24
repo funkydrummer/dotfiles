@@ -21,6 +21,9 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'altercation/vim-colors-solarized'
+" Bundle 'iain/vim-rspec'
+" Bundle 'thoughtbot/vim-rspec'
 
 " quoting/parenthesizing made simple
 " Bundle 'tpope/vim-surround'
@@ -40,7 +43,11 @@ set scrolloff=3
 set cursorline
 set relativenumber
 
-color molokai
+syntax enable
+set background=dark
+colorscheme solarized
+
+" color molokai
 set guifont=Monaco:h12
 
 " Undo
@@ -222,3 +229,14 @@ map <leader>p :call PrevBuffer()<CR>
 set list listchars=tab:»·,trail:·
 
 let g:ruby_indent_access_modifier_style="indent"
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+let g:rspec_command = "!bundle exec rspec -I . -f d -c {spec}"
+" let g:rspec_command_launcher = "iterm"
+
+
