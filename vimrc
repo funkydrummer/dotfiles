@@ -22,6 +22,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'vim-airline'
 " Bundle 'iain/vim-rspec'
 " Bundle 'thoughtbot/vim-rspec'
 
