@@ -232,14 +232,3 @@ map <leader>p :call PrevBuffer()<CR>
 set list listchars=tab:»·,trail:·
 
 let g:ruby_indent_access_modifier_style="indent"
-
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
-let g:rspec_command = "!bundle exec rspec -I . -f d -c {spec}"
-" let g:rspec_command_launcher = "iterm"
-
-
