@@ -32,6 +32,8 @@ Bundle 'vim-airline'
 " Bundle 'tpope/vim-haml'
 " Bundle 'kchmck/vim-coffee-script'
 
+autocmd FileType ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
+
 filetype plugin indent on     " required!
 
 let mapleader = ","
