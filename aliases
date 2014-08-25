@@ -3,6 +3,7 @@ alias reload!='. ~/.zshrc'
 alias gvim="/Library/Documentation/Applications/MacVim.app/Contents/MacOS/Vim -g"
 
 alias off="sudo shutdown -h +60"
+alias killoff='sudo killall shutdown'
 
 alias e="exit"
 alias cd..="cd .."
@@ -42,7 +43,7 @@ alias rs='rails server'
 alias rc='rails console'
 alias r=rake
 alias st='ruby -Itest'
-alias migrate='rake db:migrate'
+alias migrate='rake db:migrate db:test:prepare'
 alias prepare='rake db:test:prepare'
 alias dbreload!='RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:migrate'
 

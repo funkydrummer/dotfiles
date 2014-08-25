@@ -1,3 +1,6 @@
+set background=dark
+colorscheme solarized
+
 " No audible bell
 autocmd! GUIEnter * set vb t_vb=
 

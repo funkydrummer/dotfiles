@@ -23,6 +23,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'vim-airline'
+Bundle 'ngmy/vim-rubocop'
+Bundle 'kchmck/vim-coffee-script'
 " Bundle 'iain/vim-rspec'
 " Bundle 'thoughtbot/vim-rspec'
 
@@ -47,8 +49,8 @@ set cursorline
 set relativenumber
 
 syntax enable
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
 
 " color molokai
 set guifont=Monaco:h12
@@ -230,5 +232,7 @@ map <leader>p :call PrevBuffer()<CR>
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
+
+set colorcolumn=80
 
 let g:ruby_indent_access_modifier_style="indent"
