@@ -223,6 +223,9 @@ map <leader>y ggyGjk
 " tabonly
 map <leader>q :tabo<CR>
 
+" Prefer single-quoted strings
+map <leader>' :%s/"/'/gc<CR>
+
 " get rid of hashrocket 
 map <leader>h :%s/:\([^=,'"]*\) =>/\1:/g<CR>
 " and with interactive mode

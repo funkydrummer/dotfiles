@@ -42,7 +42,7 @@ alias rl=rails
 alias rs='rails server'
 alias rc='rails console'
 alias r=rake
-alias st='ruby -Itest'
+alias st='be ruby -Itest'
 alias migrate='rake db:migrate db:test:prepare'
 alias prepare='rake db:test:prepare'
 alias dbreload!='RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:migrate'
@@ -59,3 +59,7 @@ alias gphm='git push -u origin master'
 alias gs='git status'
 alias gl='git log'
 alias gb='git branch'
+alias gbd='git branch -d'
+alias stash='git stash --include-untracked'
+alias apply='git stash apply'
+
