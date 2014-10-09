@@ -25,6 +25,10 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'vim-airline'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'heartsentwined/vim-emblem'
+" Bundle 'dsawardekar/portkey'
+" Bundle 'dsawardekar/ember.vim'
 " Bundle 'iain/vim-rspec'
 " Bundle 'thoughtbot/vim-rspec'
 
@@ -121,6 +125,7 @@ map ,jC :CtrlP config<CR>
 map ,jV :CtrlP vendor<CR>
 map ,jF :CtrlP factories<CR>
 map ,jT :CtrlP test<CR>
+map ,je :CtrlP app/assets/javascripts<CR>
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
