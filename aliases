@@ -63,3 +63,5 @@ alias gbd='git branch -d'
 alias stash='git stash --include-untracked'
 alias apply='git stash apply'
 
+# Fix
+alias pgfix='rm /usr/local/var/postgres/postmaster.pid'
