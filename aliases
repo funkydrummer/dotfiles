@@ -61,7 +61,14 @@ alias gl='git log'
 alias gb='git branch'
 alias gbd='git branch -d'
 alias stash='git stash --include-untracked'
-alias apply='git stash apply'
+alias 'gitclean!'='git branch --merged | egrep -v "\*|master|develop|development|staging|production" | xargs -n 1 git branch -d'
 
 # Fix
 alias pgfix='rm /usr/local/var/postgres/postmaster.pid'
+
+# Sys
+alias=lsofruby='lsof -i TCP | grep ruby'
+
+# Python
+alias py=python
+

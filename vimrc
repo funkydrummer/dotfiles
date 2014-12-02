@@ -27,6 +27,7 @@ Bundle 'ngmy/vim-rubocop'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'heartsentwined/vim-emblem'
+Bundle "flazz/vim-colorschemes"
 " Bundle 'dsawardekar/portkey'
 " Bundle 'dsawardekar/ember.vim'
 " Bundle 'iain/vim-rspec'
