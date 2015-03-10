@@ -87,6 +87,20 @@ nnoremap <c-l>      <c-w>l
 nnoremap j gj
 nnoremap k gk
 
+" Fugitive mappings
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gb :Gblame<CR>
+" nnoremap <Leader>gL :exe ':!cd ' . expand('%:p:h') . '; git la'<CR>
+" nnoremap <Leader>gl :exe ':!cd ' . expand('%:p:h') . '; git las'<CR>
+" nnoremap <Leader>gh :Silent Glog<CR>
+" nnoremap <Leader>gH :Silent Glog<CR>:set nofoldenable<CR>
+nnoremap <Leader>gr :Gread<CR>
+" nnoremap <Leader>gw :Gwrite<CR>
+" nnoremap <Leader>gp :Git push<CR>
+" nnoremap <Leader>g- :Silent Git stash<CR>:e<CR>
+" nnoremap <Leader>g+ :Silent Git stash pop<CR>:e<CR>
+
 " Wrap
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel

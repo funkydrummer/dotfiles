@@ -56,6 +56,9 @@ alias gpls='git pull -u origin staging'
 alias gplm='git pull -u origin master'
 alias gphs='git push -u origin staging'
 alias gphm='git push -u origin master'
+
+alias release='git push -u origin master && git push shelly master'
+
 alias gs='git status'
 alias gl='git log'
 alias gb='git branch'
@@ -67,7 +70,7 @@ alias 'gitclean!'='git branch --merged | egrep -v "\*|master|develop|development
 alias pgfix='rm /usr/local/var/postgres/postmaster.pid'
 
 # Sys
-alias=lsofruby='lsof -i TCP | grep ruby'
+alias lsofruby='lsof -i TCP | grep ruby'
 
 # Python
 alias py=python

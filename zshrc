@@ -59,3 +59,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 ### Autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+### pydub to python path
+PYTHONPATH="/Users/funkydrummer/Projects/My/python/pydub:$PYTHONPATH"
+export PYTHONPATH
