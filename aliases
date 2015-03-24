@@ -75,3 +75,5 @@ alias lsofruby='lsof -i TCP | grep ruby'
 # Python
 alias py=python
 
+# Nginx conf
+alias nginx_conf='g /usr/local/etc/nginx/nginx.conf'
