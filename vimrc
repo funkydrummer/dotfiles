@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " My bundles here:
@@ -39,7 +39,17 @@ Bundle "flazz/vim-colorschemes"
 " Bundle 'tpope/vim-haml'
 " Bundle 'kchmck/vim-coffee-script'
 
-autocmd FileType ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd BufNewFile,BufReadPost *.md,*.mdown,*.mdwn,*.mmd set filetype=markdown
+
+" Trim white spaces
+function! StripTrailingWhiteSpace()
+  " skip for markdown
+  if &filetype =~ 'markdown'
+    return
+  endif
+  %s/\s\+$//e
+endfunction
+autocmd BufWritePre * call StripTrailingWhiteSpace()
 
 filetype plugin indent on     " required!
 
@@ -246,7 +256,7 @@ map <leader>q :tabo<CR>
 " Prefer single-quoted strings
 map <leader>' :%s/"/'/gc<CR>
 
-" get rid of hashrocket 
+" get rid of hashrocket
 map <leader>h :%s/:\([^=,'"]*\) =>/\1:/g<CR>
 " and with interactive mode
 map <leader>hi :%s/:\([^=,'"]*\) =>/\1:/gc<CR>
