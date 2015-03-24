@@ -259,3 +259,30 @@ set list listchars=tab:»·,trail:·
 set colorcolumn=80
 
 let g:ruby_indent_access_modifier_style="indent"
+
+" Ruby
+autocmd Filetype ruby iabbr init- def initialize<CR>end<ESC>?initialize<ESC>$a
+autocmd Filetype ruby iabbr cls- class<CR>end<ESC>?class<ESC>$a
+autocmd Filetype ruby iabbr mod- module<CR>end<ESC>?module<ESC>$a
+autocmd Filetype ruby iabbr d= def<CR>end<ESC>?def<ESC>$a
+autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
+autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>k$i
+autocmd Filetype ruby iabbr {- { \|A\| }<ESC>FA"_xi
+autocmd Filetype ruby iabbr #- #{}<ESC>'_ci{
+autocmd Filetype ruby iabbr rq- require ''<ESC>i
+
+" ERB
+autocmd Filetype eruby iabbr rt+ <% woo %><ESC>Fw<ESC>"_ciw
+autocmd Filetype eruby iabbr rt- <% woo%><ESC>Fw<ESC>"_ciw
+autocmd Filetype eruby iabbr rt= <%= woo%><ESC>Fw<ESC>"_ciw
+autocmd Filetype eruby iabbr rtc <%# woo%><ESC>Fw<ESC>"_ciw
+
+" Rspec yea
+autocmd Filetype ruby iabbr dsc- describe  do<CR>end<ESC>?describe<ESC>wi
+autocmd Filetype ruby iabbr it- it '' do<CR>end<ESC>?''<ESC>a
+autocmd Filetype ruby iabbr cnt- context '' do<CR>end<ESC>?''<ESC>a
+autocmd Filetype ruby iabbr sub- subject '' do<CR>end<ESC>?''<ESC>a
+autocmd Filetype ruby iabbr lt- let : { }<ESC>?:<ESC>a
+
+" minitest
+autocmd Filetype ruby iabbr test- test '' do<CR>end<ESC>?''<ESC>a
