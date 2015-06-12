@@ -1,15 +1,16 @@
 [user]
   name = Rafał Trojanowski
-  email = rafal@prograils.com
+  email = rafal.trojanowski@ironin.pl
 
 [push]
 	default = simple
 [core]
 	editor = /usr/bin/vim
+	excludesfile = /Users/funkydrummer/.gitignore_global
 [alias]
   c = commit
   cm = commit -m
-	co = checkout
+  co = checkout
   m = merge
   l = log
   s = status
@@ -19,3 +20,5 @@
   dc = diff --cached
   who = shortlog -s --
   ma = merge --abort
+[branch "master"]
+  mergeoptions = --no-ff

@@ -28,6 +28,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'heartsentwined/vim-emblem'
 Bundle "flazz/vim-colorschemes"
+Bundle "pangloss/vim-javascript"
+
 " Bundle 'dsawardekar/portkey'
 " Bundle 'dsawardekar/ember.vim'
 " Bundle 'iain/vim-rspec'
@@ -296,3 +298,7 @@ autocmd Filetype ruby iabbr lt- let : { }<ESC>?:<ESC>a
 
 " minitest
 autocmd Filetype ruby iabbr test- test '' do<CR>end<ESC>?''<ESC>a
+
+" Copy filename to clipboard
+nmap ,ls :let @*=expand("%")<CR>
+nmap ,ll :let @*=expand("%:p")<CR>

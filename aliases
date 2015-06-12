@@ -5,7 +5,7 @@ alias gvim="/Library/Documentation/Applications/MacVim.app/Contents/MacOS/Vim -g
 alias off="sudo shutdown -h +60"
 alias killoff='sudo killall shutdown'
 
-alias e="exit"
+alias q="exit"
 alias cd..="cd .."
 alias ..="cd .."
 alias p="cd ~/Projects"
@@ -20,8 +20,9 @@ alias prograilspubkey="cat ~/.ssh/id_rsa_prograils.pub | pbcopy | echo '=> Publi
 
 alias getpath='echo -n $PWD|pbcopy|echo "current path copied to clipboard"'
 
-alias g=gvim
+alias e=gvim
 alias v=vim
+alias g=git
 
 alias rmvimtemp='rm ~/.vim/_temp/*'
 alias aliases='vim ~/.aliases'
@@ -46,6 +47,10 @@ alias st='be ruby -Itest'
 alias migrate='rake db:migrate db:test:prepare'
 alias prepare='rake db:test:prepare'
 alias dbreload!='RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:migrate'
+alias seed!='rake db:drop && rake db:create && rake db:migrate && rake db:seed'
+
+alias solrstart='rake sunspot:solr:start'
+alias solrstop='rake sunspot:solr:stop'
 
 # Routing
 alias rr='rake routes'
@@ -66,14 +71,31 @@ alias gbd='git branch -d'
 alias stash='git stash --include-untracked'
 alias 'gitclean!'='git branch --merged | egrep -v "\*|master|develop|development|staging|production" | xargs -n 1 git branch -d'
 
+alias gru='git remote update origin --prune'
+
 # Fix
 alias pgfix='rm /usr/local/var/postgres/postmaster.pid'
-
-# Sys
-alias lsofruby='lsof -i TCP | grep ruby'
 
 # Python
 alias py=python
 
 # Nginx conf
-alias nginx_conf='g /usr/local/etc/nginx/nginx.conf'
+alias nginxconf='g /usr/local/etc/nginx/nginx.conf'
+
+# Sys
+# find rails server process
+alias rp='lsof -i TCP | grep ruby'
+alias ep='lsof -i TCP | grep 35729'
+
+alias rkill="kill -9 $(lsof -i tcp:3000 -t)"
+#alias ekill="kill -9 $(lsof -i TCP | grep 35729)"
+
+alias ki="kill -9"
+
+# Ember
+alias es="ember serve"
+alias eb="ember build"
+alias ei="npm install && bower install"
+
+alias clean="rm -rf node_modules bower_components dist tmp"
+
