@@ -13,22 +13,34 @@ Bundle 'gmarik/vundle'
 Bundle 'tomasr/molokai'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'ddollar/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ervandew/supertab'
 Bundle 'jistr/vim-nerdtree-tabs'
+
+Bundle 'tpope/vim-fugitive'
+
+Bundle 'rking/ag.vim'
+
+Bundle "pangloss/vim-javascript"
+Bundle 'heartsentwined/vim-emblem'
+Bundle 'slim-template/vim-slim.git'
+
+Bundle 'altercation/vim-colors-solarized'
+
+Bundle 'ddollar/nerdcommenter'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'vim-airline'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'heartsentwined/vim-emblem'
 Bundle "flazz/vim-colorschemes"
-Bundle "pangloss/vim-javascript"
+Bundle "godlygeek/tabular"
+
+
+syntax enable
+filetype plugin indent on
 
 " Bundle 'dsawardekar/portkey'
 " Bundle 'dsawardekar/ember.vim'
@@ -69,7 +81,7 @@ syntax enable
 " set background=dark
 " colorscheme solarized
 
-" color molokai
+color molokai
 set guifont=Monaco:h12
 
 " Undo
@@ -152,8 +164,10 @@ map ,jC :CtrlP config<CR>
 map ,jV :CtrlP vendor<CR>
 map ,jF :CtrlP factories<CR>
 map ,jT :CtrlP test<CR>
-map ,je :CtrlP app/assets/javascripts<CR>
+map ,je :CtrlP ember-frontend<CR>
+" map ,je :CtrlP app/assets/javascripts<CR>
 
+" ________________
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Borrowed from vimcasts, super useful----------------------------------------
@@ -178,7 +192,7 @@ vnoremap <backspace> <gv
 vnoremap <s-backspace> >gv
 
 " Ctags
-set tags=your_gem_tags_file_path,./tags,tags,;
+" set tags=your_gem_tags_file_path,./tags,tags,;
 
 " https://github.com/thoughtbot/dotfiles/blob/master/vimrc
 
@@ -241,6 +255,13 @@ if has('statusline')
 endif
 
 " leader
+"
+" tabonly
+map <leader>q :tabo<CR>
+
+" NERDTreeTabsToggle
+map <leader>n :NERDTreeTabsToggle<CR>
+
 nnoremap <leader>e  :e!<enter>
 
 map <space> viw
@@ -252,7 +273,12 @@ map <leader>i mmgg=G`m<CR>
 " Yank entire file
 map <leader>y ggyGjk
 
+" End line with );
+map <leader>) s/$/\);/g<CR>
+
 " tabonly
+map <leader>q :tabo<CR>
+" NERDTreeToggle
 map <leader>q :tabo<CR>
 
 " Prefer single-quoted strings
@@ -299,6 +325,28 @@ autocmd Filetype ruby iabbr lt- let : { }<ESC>?:<ESC>a
 " minitest
 autocmd Filetype ruby iabbr test- test '' do<CR>end<ESC>?''<ESC>a
 
-" Copy filename to clipboard
+" Copy filename to clipboard (get buffer path)
 nmap ,ls :let @*=expand("%")<CR>
 nmap ,ll :let @*=expand("%:p")<CR>
+
+set incsearch
+
+" set wildignore+=*/.gem/*,*/vendor/Plug/*,*/tmp/*,node_modules/*,bower_components/*,log/*,*/public/system*,*.orig,*.o,vendor/bunlde,ember-frontend/node_modules/*,ember-frontend/bower_components/*,ember-frontend/tmp/*,app/*,
+
+" set wildignore+=ember-frontend/*
+"let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Storegit|hg|svn|optimized|compiled|node_modules|ember-frontend)$'
+"
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|bower_components|target|dist|log|tmp|public|system|budle|vendor)|(\.(swp|ico|git|svn))$'
+" tags
+
+" Tabs
+nnoremap H gT
+nnoremap L gt
+
+" Mappings to move lines
+nnoremap <D-j> :m .+1<CR>==
+nnoremap <D-k> :m .-2<CR>==
+inoremap <D-j> <Esc>:m .+1<CR>==gi
+inoremap <D-k> <Esc>:m .-2<CR>==gi
+vnoremap <D-j> :m '>+1<CR>gv=gv
+vnoremap <D-k> :m '<-2<CR>gv=gv
