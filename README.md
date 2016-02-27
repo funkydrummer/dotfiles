@@ -5,7 +5,7 @@
 It’s as simple as running the following command from our home directory:
 
 ```bash
-git clone git@github.com:funkydrummer/dotfiles.git
+git clone git@github.com:rafaltrojanowski/dotfiles.git
 ```
 
 Once the repository has been cloned to our home directory, simply change to the dotfiles directory, make the makesymlinks.sh script executable, and run the script, like so:
