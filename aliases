@@ -1,7 +1,8 @@
 alias r!='. ~/.zshrc'
 alias ack!='. ~/.ackrc'
 
-alias gvim="/Library/Documentation/Applications/MacVim.app/Contents/MacOS/Vim -g"
+# alias gvim="/Library/Documentation/Applications/MacVim.app/Contents/MacOS/Vim -g"
+alias gvim="/usr/local/Cellar/macvim/7.4-96/MacVim.app/Contents/MacOS/Vim -g"
 
 alias off="sudo shutdown -h +60"
 alias killoff='sudo killall shutdown'

@@ -1,57 +1,59 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " My bundles here:
 "
-Bundle 'tomasr/molokai'
-Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'ervandew/supertab'
-Bundle 'jistr/vim-nerdtree-tabs'
+Plugin 'tomasr/molokai'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ervandew/supertab'
+Plugin 'jistr/vim-nerdtree-tabs'
 
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
-Bundle 'rking/ag.vim'
+Plugin 'rking/ag.vim'
 
-Bundle "pangloss/vim-javascript"
-Bundle 'heartsentwined/vim-emblem'
-Bundle 'slim-template/vim-slim.git'
+Plugin 'pangloss/vim-javascript'
+Plugin 'heartsentwined/vim-emblem'
+Plugin 'slim-template/vim-slim.git'
 
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 
-Bundle 'ddollar/nerdcommenter'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-endwise'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-airline'
-Bundle 'ngmy/vim-rubocop'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle "flazz/vim-colorschemes"
-Bundle "godlygeek/tabular"
+Plugin 'ddollar/nerdcommenter'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-endwise'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-airline'
+Plugin 'ngmy/vim-rubocop'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'godlygeek/tabular'
 
 
-syntax enable
-filetype plugin indent on
-
-" Bundle 'dsawardekar/portkey'
-" Bundle 'dsawardekar/ember.vim'
-" Bundle 'iain/vim-rspec'
-" Bundle 'thoughtbot/vim-rspec'
+" Plugin 'dsawardekar/portkey'
+" Plugin 'dsawardekar/ember.vim'
+" Plugin 'iain/vim-rspec'
+" Plugin 'thoughtbot/vim-rspec'
 
 " quoting/parenthesizing made simple
-" Bundle 'tpope/vim-surround'
+" Plugin 'tpope/vim-surround'
 
-" Bundle 'tpope/vim-haml'
-" Bundle 'kchmck/vim-coffee-script'
+" Plugin 'tpope/vim-haml'
+" Plugin 'kchmck/vim-coffee-script'
+
+call vundle#end()
+filetype plugin indent on
+
+syntax enable
 
 autocmd BufNewFile,BufReadPost *.md,*.mdown,*.mdwn,*.mmd set filetype=markdown
 
@@ -81,7 +83,7 @@ syntax enable
 " set background=dark
 " colorscheme solarized
 
-color molokai
+" color molokai
 set guifont=Monaco:h12
 
 " Undo
