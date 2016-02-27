@@ -1,6 +1,6 @@
 [user]
   name = Rafał Trojanowski
-  email = rafal.trojanowski@ironin.pl
+  email = rt.trojanowski@gmail.com
 
 [push]
 	default = simple
@@ -22,3 +22,5 @@
   ma = merge --abort
 [branch "master"]
   mergeoptions = --no-ff
+[pull]
+	rebase = true

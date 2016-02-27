@@ -1,4 +1,5 @@
-alias reload!='. ~/.zshrc'
+alias r!='. ~/.zshrc'
+alias ack!='. ~/.ackrc'
 
 alias gvim="/Library/Documentation/Applications/MacVim.app/Contents/MacOS/Vim -g"
 
@@ -9,7 +10,7 @@ alias q="exit"
 alias cd..="cd .."
 alias ..="cd .."
 alias p="cd ~/Projects"
-alias dotfiles="cd ~/dotfiles"
+alias df="cd ~/dotfiles"
 
 alias showhiddenfiles="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias dontshowhiddenfiles="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
@@ -27,6 +28,8 @@ alias g=git
 alias rmvimtemp='rm ~/.vim/_temp/*'
 alias aliases='vim ~/.aliases'
 alias vimrc='vim ~/.vimrc'
+alias zsh='vim ~/.zshrc'
+alias ackrc='vim ~/.ackrc'
 alias gvimrc='vim ~/.gvimrc'
 alias gitconf='vim ~/.gitconfig'
 
@@ -48,6 +51,16 @@ alias migrate='rake db:migrate db:test:prepare'
 alias prepare='rake db:test:prepare'
 alias dbreload!='RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create && RAILS_ENV=test rake db:migrate'
 alias seed!='rake db:drop && rake db:create && rake db:migrate && rake db:seed'
+alias db!='rake db:drop && rake db:create && rake db:migrate'
+
+# Rspec
+alias t='rspec spec'
+
+# Rake
+alias sequeltestdb!='bundle exec rake RAILS_ENV=test db:drop && rake RAILS_ENV=test db:create && rake RAILS_ENV=test db:migrate'
+# && rake RAILS_ENV=test db:seed'
+
+alias sequeldb!='bundle exec rake db:drop && rake db:create && rake db:migrate && rake db:seed'
 
 alias solrstart='rake sunspot:solr:start'
 alias solrstop='rake sunspot:solr:stop'
@@ -73,6 +86,8 @@ alias 'gitclean!'='git branch --merged | egrep -v "\*|master|develop|development
 
 alias gru='git remote update origin --prune'
 
+alias gse='git log -S'
+
 # Fix
 alias pgfix='rm /usr/local/var/postgres/postmaster.pid'
 
@@ -87,15 +102,32 @@ alias nginxconf='g /usr/local/etc/nginx/nginx.conf'
 alias rp='lsof -i TCP | grep ruby'
 alias ep='lsof -i TCP | grep 35729'
 
-alias rkill="kill -9 $(lsof -i tcp:3000 -t)"
-#alias ekill="kill -9 $(lsof -i TCP | grep 35729)"
-
 alias ki="kill -9"
 
 # Ember
 alias es="ember serve"
 alias eb="ember build"
-alias ei="npm install && bower install"
+alias et="ember test --serve"
+alias etf="ember test --serve --filter"
+alias ei="sudo npm install && bower install"
 
 alias clean="rm -rf node_modules bower_components dist tmp"
 
+# Elasticsearch
+alias el="elasticsearch"
+
+alias wheneverstart="whenever --set environment=development --update-crontab"
+
+alias postgres.server="sudo -u postgres pg_ctl -D /Library/PostgreSQL/9.2/data"
+
+alias killctags="kill $(ps aux | grep ctags | awk '{print $2}')"
+
+alias c="j ctb"
+alias rds="redis-server"
+alias rdsk="pkill -f redis-server"
+alias rk="pkill -f ruby"
+#alias rkill="kill -9 $(lsof -i tcp:3000 -t)"
+#alias ekill="kill -9 $(lsof -i TCP | grep 35729)"
+
+alias ver="npm view ember-cli-gettext version"
+alias bnk="time ./bin/rails runner 'puts "done"'"
