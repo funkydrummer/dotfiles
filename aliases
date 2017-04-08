@@ -97,7 +97,7 @@ alias history="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cre
 alias authorme='git filter-branch --commit-filter '"'"'if [ "$GIT_AUTHOR_NAME" = "Rafał Trojanowski" ]; then export GIT_AUTHOR_NAME="Rafał Trojanowski"; export GIT_AUTHOR_EMAIL=rt.trojanowski@gmail.com; fi; git commit-tree "$@"'"'"''
 alias commiterme='git filter-branch --commit-filter '"'"'if [ "$GIT_COMMITTER_NAME" = "Rafał Trojanowski" ]; then export GIT_COMMITTER_NAME="Rafał Trojanowski"; export GIT_COMMITTER_EMAIL=rt.trojanowski@gmail.com; fi; git commit-tree "$@"'"'"''
 alias filtercommits='authorme && commiterme'
-
+alias pushdotfiles="git push -f https://rafaltrojanowski@github.com/rafaltrojanowski/dotfiles master:master"
 
 # Python
 alias py=python
