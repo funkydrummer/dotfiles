@@ -16,7 +16,7 @@ alias df="cd ~/dotfiles"
 alias showhiddenfiles="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias dontshowhiddenfiles="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
 
-#Copy publickey to clipboard
+# Copy publickey to clipboard
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 alias prograilspubkey="cat ~/.ssh/id_rsa_prograils.pub | pbcopy | echo '=> Public prograils key copied to pasteboard.'"
 
@@ -27,12 +27,14 @@ alias v=vim
 alias g=git
 
 alias rmvimtemp='rm ~/.vim/_temp/*'
-alias aliases='vim ~/.aliases'
-alias vimrc='vim ~/.vimrc'
-alias zsh='vim ~/.zshrc'
-alias ackrc='vim ~/.ackrc'
-alias gvimrc='vim ~/.gvimrc'
-alias gitconf='vim ~/.gitconfig'
+alias aliases='e ~/.aliases'
+alias vimrc='e ~/.vimrc'
+alias zshrc='e ~/.zshrc'
+alias ackrc='e ~/.ackrc'
+alias gvimrc='e ~/.gvimrc'
+alias gitcf='e ~/.gitconfig'
+alias sshcf='e ~/.ssh/config'
+alias scr="cd ~/scripts"
 
 # Bundler
 alias b=bundle
@@ -54,14 +56,14 @@ alias dbreload!='RAILS_ENV=test rake db:drop && RAILS_ENV=test rake db:create &&
 alias seed!='rake db:drop && rake db:create && rake db:migrate && rake db:seed'
 alias db!='rake db:drop && rake db:create && rake db:migrate'
 
+alias pp="puma -p 3000"
+
 # Rspec
 alias t='rspec spec'
 
 # Rake
-alias sequeltestdb!='bundle exec rake RAILS_ENV=test db:drop && rake RAILS_ENV=test db:create && rake RAILS_ENV=test db:migrate'
-# && rake RAILS_ENV=test db:seed'
-
-alias sequeldb!='bundle exec rake db:drop && rake db:create && rake db:migrate && rake db:seed'
+alias rebuildtestdb!='bundle exec rake RAILS_ENV=test db:drop && rake RAILS_ENV=test db:create && rake RAILS_ENV=test db:migrate' # && rake RAILS_ENV=test db:seed'
+alias rebuilddb!='bundle exec rake db:drop && rake db:create && rake db:migrate && rake db:seed'
 
 alias solrstart='rake sunspot:solr:start'
 alias solrstop='rake sunspot:solr:stop'
@@ -71,14 +73,16 @@ alias rr='rake routes'
 alias rrg='rake routes | grep'
 
 # Git
-alias gpls='git pull -u origin staging'
-alias gplm='git pull -u origin master'
-alias gphs='git push -u origin staging'
-alias gphm='git push -u origin master'
+alias gcb='git checkout -b'
 
-alias release='git push -u origin master && git push shelly master'
+alias gps='git pull origin staging'
+alias gpm='git pull origin master'
+
+alias gpus='git push origin staging'
+alias gpum='git push origin master'
 
 alias gs='git status'
+alias gd='git diff'
 alias gl='git log'
 alias gb='git branch'
 alias gbd='git branch -d'
@@ -86,11 +90,14 @@ alias stash='git stash --include-untracked'
 alias 'gitclean!'='git branch --merged | egrep -v "\*|master|develop|development|staging|production" | xargs -n 1 git branch -d'
 
 alias gru='git remote update origin --prune'
-
 alias gse='git log -S'
 
-# Fix
-alias pgfix='rm /usr/local/var/postgres/postmaster.pid'
+alias history="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+alias authorme='git filter-branch --commit-filter '"'"'if [ "$GIT_AUTHOR_NAME" = "Rafał Trojanowski" ]; then export GIT_AUTHOR_NAME="Rafał Trojanowski"; export GIT_AUTHOR_EMAIL=rt.trojanowski@gmail.com; fi; git commit-tree "$@"'"'"''
+alias commiterme='git filter-branch --commit-filter '"'"'if [ "$GIT_COMMITTER_NAME" = "Rafał Trojanowski" ]; then export GIT_COMMITTER_NAME="Rafał Trojanowski"; export GIT_COMMITTER_EMAIL=rt.trojanowski@gmail.com; fi; git commit-tree "$@"'"'"''
+alias filtercommits='authorme && commiterme'
+
 
 # Python
 alias py=python
@@ -102,8 +109,10 @@ alias nginxconf='g /usr/local/etc/nginx/nginx.conf'
 # find rails server process
 alias rp='lsof -i TCP | grep ruby'
 alias ep='lsof -i TCP | grep 35729'
-
 alias ki="kill -9"
+
+alias p/="ps aux | grep puma"
+alias ss="spring stop"
 
 # Ember
 alias es="ember serve"
@@ -111,24 +120,43 @@ alias eb="ember build"
 alias et="ember test --serve"
 alias etf="ember test --serve --filter"
 alias ei="sudo npm install && bower install"
+alias eh="ember help generate"
 
-alias clean="rm -rf node_modules bower_components dist tmp"
+# NPM
+alias npmclean="rm -rf node_modules bower_components dist tmp"
+alias npmcache="npm cache clean && bower cache clean"
 
 # Elasticsearch
 alias el="elasticsearch"
 
 alias wheneverstart="whenever --set environment=development --update-crontab"
-
 alias postgres.server="sudo -u postgres pg_ctl -D /Library/PostgreSQL/9.2/data"
-
 alias killctags="kill $(ps aux | grep ctags | awk '{print $2}')"
 
-alias c="j ctb"
 alias rds="redis-server"
 alias rdsk="pkill -f redis-server"
 alias rk="pkill -f ruby"
-#alias rkill="kill -9 $(lsof -i tcp:3000 -t)"
-#alias ekill="kill -9 $(lsof -i TCP | grep 35729)"
+alias rkill="kill -9 $(lsof -i tcp:3000 -t)"
+# alias rkill="kill -9 $(ps aux | grep puma | grep tcp)"
+# alias ekill="kill -9 $(lsof -i TCP | grep 35729)"
 
-alias ver="npm view ember-cli-gettext version"
-alias bnk="time ./bin/rails runner 'puts "done"'"
+alias ver="npm view your-addon version" # TODO pass argument here
+alias bnk='time ./bin/rails runner '"'"'puts "done"'"'"''
+
+# POSTGRES
+
+alias pgrun='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+# psql -U rafaltrojanowski -d local_db_name< ~/Desktop/staging_dump.sql # dump
+
+# PG Fix
+alias pgfix='rm /usr/local/var/postgres/postmaster.pid'
+
+# CURL
+
+# curl -v -H "Accept: application/json" -H "Content-type: application/json" -X GET -d ' {}' http://localhost:3000/api/v1/notifications\?id\=oxkzH1cm | python -mjson.tool >> test
+
+# curl -v -H "Accept: application/json" -H "Content-type: application/json" -X GET -d ' {}' http://localhost:3000/api/v1/notifications\?id\=oxkzH1cm | python -mjson.tool
+
+# https://coderwall.com/p/n1d-na/excluding-files-from-git-locally
+alias exclude="!sh -c 'echo "$1" >> .git/info/exclude'"
