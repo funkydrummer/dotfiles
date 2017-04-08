@@ -10,6 +10,8 @@ Plugin 'gmarik/vundle'
 
 " My bundles here:
 "
+"
+Plugin 'yegappan/greplace'
 Plugin 'tomasr/molokai'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
@@ -37,12 +39,15 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'godlygeek/tabular'
+Plugin 'terryma/vim-multiple-cursors'
 
+"Show \"Match 123 of 456 /search term/\" in Vim searches.
+Plugin 'henrik/vim-indexed-search'
 
 " Plugin 'dsawardekar/portkey'
 " Plugin 'dsawardekar/ember.vim'
 " Plugin 'iain/vim-rspec'
-" Plugin 'thoughtbot/vim-rspec'
+Plugin 'thoughtbot/vim-rspec'
 
 " quoting/parenthesizing made simple
 " Plugin 'tpope/vim-surround'
@@ -77,13 +82,14 @@ set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set noswapfile
 set scrolloff=3
 set cursorline
+
 set relativenumber
+set number
 
 syntax enable
 " set background=dark
-" colorscheme solarized
-
-" color molokai
+" colorscheme tatami
+color molokai
 set guifont=Monaco:h12
 
 " Undo
@@ -269,7 +275,7 @@ nnoremap <leader>e  :e!<enter>
 map <space> viw
 nnoremap <leader>: viw<esc>hbi:<esc>lel
 
-" Intending
+" Indenting
 map <leader>i mmgg=G`m<CR>
 
 " Yank entire file
@@ -331,7 +337,8 @@ autocmd Filetype ruby iabbr test- test '' do<CR>end<ESC>?''<ESC>a
 nmap ,ls :let @*=expand("%")<CR>
 nmap ,ll :let @*=expand("%:p")<CR>
 
-set incsearch
+" set incsearch
+set hlsearch
 
 " set wildignore+=*/.gem/*,*/vendor/Plug/*,*/tmp/*,node_modules/*,bower_components/*,log/*,*/public/system*,*.orig,*.o,vendor/bunlde,ember-frontend/node_modules/*,ember-frontend/bower_components/*,ember-frontend/tmp/*,app/*,
 
@@ -352,3 +359,13 @@ inoremap <D-j> <Esc>:m .+1<CR>==gi
 inoremap <D-k> <Esc>:m .-2<CR>==gi
 vnoremap <D-j> :m '>+1<CR>gv=gv
 vnoremap <D-k> :m '<-2<CR>gv=gv
+
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+" let g:rspec_command = "rspec --drb {spec}"
+let g:rspec_runner = "os_x_iterm2"
