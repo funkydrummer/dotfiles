@@ -6,6 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
+#ZSH_THEME="honukai"
 ZSH_THEME="mh"
 
 # Example aliases
@@ -33,7 +34,7 @@ ZSH_THEME="mh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler brew gem)
+plugins=(git bundler brew gem alias-tips)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -58,13 +59,24 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ### Autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
-### pydub to python path
-PYTHONPATH="/Users/funkydrummer/Projects/My/python/pydub:$PYTHONPATH"
-export PYTHONPATH
-
 # http://stackoverflow.com/questions/4461346/slow-rails-stack
-export RUBY_GC_HEAP_INIT_SLOTS=800000
-export RUBY_HEAP_FREE_MIN=100000
-export RUBY_HEAP_SLOTS_INCREMENT=300000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=79000000
+# export RUBY_GC_HEAP_INIT_SLOTS=800000
+# export RUBY_HEAP_FREE_MIN=100000
+# export RUBY_HEAP_SLOTS_INCREMENT=300000
+# export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+# export RUBY_GC_MALLOC_LIMIT=79000000
+
+# Rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# Silver searcher
+alias ag='ag --path-to-agignore ~/.agignore'
+
+export EDITOR=vim
+
+# direnv
+eval "$(direnv hook zsh)"
+
+#scripts
+export PATH="$PATH:~/scripts"
