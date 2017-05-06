@@ -1,6 +1,6 @@
 set background=light
-" colorscheme solarized
-colorscheme amcolors
+colorscheme solarized
+" colorscheme amcolors
 
 call togglebg#map("<F5>")
 

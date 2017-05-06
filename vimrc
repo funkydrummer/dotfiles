@@ -6,7 +6,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " My bundles here:
 "
@@ -47,7 +47,7 @@ Plugin 'henrik/vim-indexed-search'
 " Plugin 'dsawardekar/portkey'
 " Plugin 'dsawardekar/ember.vim'
 " Plugin 'iain/vim-rspec'
-Plugin 'thoughtbot/vim-rspec'
+" Plugin 'thoughtbot/vim-rspec'
 
 " quoting/parenthesizing made simple
 " Plugin 'tpope/vim-surround'
