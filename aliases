@@ -121,7 +121,7 @@ alias eb="ember build"
 alias et="ember test --serve"
 alias etf="ember test --serve --filter"
 alias ei="sudo npm install && bower install"
-alias eh="ember help generate"
+alias ehg="ember help generate"
 
 # NPM
 alias npmclean="rm -rf node_modules bower_components dist tmp"
@@ -139,7 +139,7 @@ alias rdsk="pkill -f redis-server"
 alias rk="pkill -f ruby"
 alias rkill="kill -9 $(lsof -i tcp:3000 -t)"
 # alias rkill="kill -9 $(ps aux | grep puma | grep tcp)"
-# alias ekill="kill -9 $(lsof -i TCP | grep 35729)"
+alias ekill="sudo kill -9 $(sudo lsof -t -i:4200)"
 
 alias ver="npm view your-addon version" # TODO pass argument here
 alias bnk='time ./bin/rails runner '"'"'puts "done"'"'"''
