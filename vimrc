@@ -369,3 +369,11 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 " let g:rspec_command = "rspec --drb {spec}"
 let g:rspec_runner = "os_x_iterm2"
+
+" https://stackoverflow.com/a/34992101/1590134
+ino " ""<left>
+ino ' ''<left>
+ino ( ()<left>
+ino [ []<left>
+ino { {}<left>
+ino {<CR> {<CR>}<ESC>O

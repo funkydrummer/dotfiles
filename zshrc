@@ -80,3 +80,7 @@ eval "$(direnv hook zsh)"
 
 #scripts
 export PATH="$PATH:~/scripts"
+
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"

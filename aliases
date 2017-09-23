@@ -36,6 +36,7 @@ alias gvimrc='e ~/.gvimrc'
 alias gitcf='e ~/.gitconfig'
 alias sshcf='e ~/.ssh/config'
 alias scr="cd ~/scripts"
+alias colors="~/.vim/bundle/vim-colorschemes/colors/"
 
 # Bundler
 alias b=bundle
@@ -139,7 +140,7 @@ alias rdsk="pkill -f redis-server"
 alias rk="pkill -f ruby"
 alias rkill="kill -9 $(lsof -i tcp:3000 -t)"
 # alias rkill="kill -9 $(ps aux | grep puma | grep tcp)"
-alias ekill="sudo kill -9 $(sudo lsof -t -i:4200)"
+# alias ekill="sudo kill -9 $(sudo lsof -t -i:4200)"
 
 alias ver="npm view your-addon version" # TODO pass argument here
 alias bnk='time ./bin/rails runner '"'"'puts "done"'"'"''

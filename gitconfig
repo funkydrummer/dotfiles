@@ -1,7 +1,6 @@
 [user]
   name = Rafał Trojanowski
   email = rt.trojanowski@gmail.com
-
 [push]
 	default = simple
 [core]
@@ -20,6 +19,7 @@
   dc = diff --cached
   who = shortlog -s --
   ma = merge --abort
+	workprofile = config user.email \"rafal.todo@app.pl\"\n
 [branch "master"]
   mergeoptions = --no-ff
 [pull]
