@@ -22,5 +22,3 @@
   ma = merge --abort
 [branch "master"]
   mergeoptions = --no-ff
-[pull]
-	rebase = true

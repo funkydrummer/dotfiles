@@ -10,7 +10,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " My bundles here:
 "
-"
 Plugin 'yegappan/greplace'
 Plugin 'tomasr/molokai'
 Plugin 'mileszs/ack.vim'

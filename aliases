@@ -3,7 +3,7 @@ alias ack!='. ~/.ackrc'
 
 # alias gvim="/Library/Documentation/Applications/MacVim.app/Contents/MacOS/Vim -g"
 # alias gvim="/usr/local/Cellar/macvim/7.4-96/MacVim.app/Contents/MacOS/Vim -g"
-alias gvim="/Users/funkydrummer/Tools/macvim/src/MacVim/build/Release/MacVim.app/Contents/MacOS/Vim -g"
+# alias gvim="/Users/funkydrummer/Tools/macvim/src/MacVim/build/Release/MacVim.app/Contents/MacOS/Vim -g" # just mvim
 
 alias off="sudo shutdown -h +60"
 alias killoff='sudo killall shutdown'
@@ -23,7 +23,7 @@ alias prograilspubkey="cat ~/.ssh/id_rsa_prograils.pub | pbcopy | echo '=> Publi
 
 alias getpath='echo -n $PWD|pbcopy|echo "current path copied to clipboard"'
 
-alias e=gvim
+alias e=mvim
 alias v=vim
 alias g=git
 
@@ -161,3 +161,5 @@ alias pgfix='rm /usr/local/var/postgres/postmaster.pid'
 
 # https://coderwall.com/p/n1d-na/excluding-files-from-git-locally
 alias exclude="!sh -c 'echo "$1" >> .git/info/exclude'"
+
+# alias test_to_spec="find spec -name "*_test.rb" -exec sh -c 'echo mv "$1" "$(echo "$1" | sed s/test.rb\$/spec.rb/)"' _ {} \;"
