@@ -39,6 +39,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'godlygeek/tabular'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'alvan/vim-closetag'
 
 "Show \"Match 123 of 456 /search term/\" in Vim searches.
 Plugin 'henrik/vim-indexed-search'
@@ -105,10 +106,10 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
 
 nnoremap <c-h>      <c-w>h
 nnoremap <c-j>      <c-w>j
