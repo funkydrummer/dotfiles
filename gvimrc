@@ -1,7 +1,8 @@
 set background=light
-colorscheme solarized
+ colorscheme solarized
 " colorscheme amcolors
 " colorscheme molokai
+" colorscheme tatami
 
 call togglebg#map("<F5>")
 

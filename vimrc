@@ -40,6 +40,13 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'godlygeek/tabular'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'alvan/vim-closetag'
+Plugin 'tpope/vim-surround'
+
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'
 
 "Show \"Match 123 of 456 /search term/\" in Vim searches.
 Plugin 'henrik/vim-indexed-search'
@@ -88,8 +95,7 @@ set number
 
 syntax enable
 " set background=dark
-" colorscheme tatami
-color molokai
+" color molokai
 set guifont=Monaco:h12
 
 " Undo

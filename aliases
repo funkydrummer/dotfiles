@@ -7,6 +7,7 @@ alias ack!='. ~/.ackrc'
 
 alias off="sudo shutdown -h +60"
 alias killoff='sudo killall shutdown'
+alias soff="sudo shutdown -h +40"
 
 alias q="exit"
 alias cd..="cd .."
@@ -14,8 +15,12 @@ alias ..="cd .."
 alias p="cd ~/Projects"
 alias df="cd ~/dotfiles"
 
+# OSX
 alias showhiddenfiles="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 alias dontshowhiddenfiles="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
+
+alias desktopiconsoff="defaults write com.apple.finder CreateDesktop false; killall Finder"
+alias desktopiconson="defaults write com.apple.finder CreateDesktop true; killall Finder"
 
 # Copy publickey to clipboard
 alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
@@ -153,13 +158,5 @@ alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 # PG Fix
 alias pgfix='rm /usr/local/var/postgres/postmaster.pid'
 
-# CURL
-
-# curl -v -H "Accept: application/json" -H "Content-type: application/json" -X GET -d ' {}' http://localhost:3000/api/v1/notifications\?id\=oxkzH1cm | python -mjson.tool >> test
-
-# curl -v -H "Accept: application/json" -H "Content-type: application/json" -X GET -d ' {}' http://localhost:3000/api/v1/notifications\?id\=oxkzH1cm | python -mjson.tool
-
 # https://coderwall.com/p/n1d-na/excluding-files-from-git-locally
 alias exclude="!sh -c 'echo "$1" >> .git/info/exclude'"
-
-# alias test_to_spec="find spec -name "*_test.rb" -exec sh -c 'echo mv "$1" "$(echo "$1" | sed s/test.rb\$/spec.rb/)"' _ {} \;"
