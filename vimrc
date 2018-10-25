@@ -41,6 +41,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'alvan/vim-closetag'
 Plugin 'tpope/vim-surround'
+Plugin 'elixir-editors/vim-elixir'
 
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx"
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb'
