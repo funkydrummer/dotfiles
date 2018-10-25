@@ -27,7 +27,7 @@ https://github.com/wting/autojump
 https://github.com/ggreer/the_silver_searcher
 
 https://github.com/rbenv/rbenv
-https:://github.com/creationix/nvm
+https://github.com/creationix/nvm
 
 https://www.spectacleapp.com/
 
