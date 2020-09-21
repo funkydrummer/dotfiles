@@ -1,10 +1,6 @@
 alias r!='. ~/.zshrc'
 alias ack!='. ~/.ackrc'
 
-# alias gvim="/Library/Documentation/Applications/MacVim.app/Contents/MacOS/Vim -g"
-# alias gvim="/usr/local/Cellar/macvim/7.4-96/MacVim.app/Contents/MacOS/Vim -g"
-# alias gvim="/Users/funkydrummer/Tools/macvim/src/MacVim/build/Release/MacVim.app/Contents/MacOS/Vim -g" # just mvim
-
 alias off="sudo shutdown -h +60"
 alias killoff='sudo killall shutdown'
 alias soff="sudo shutdown -h +40"
@@ -13,7 +9,7 @@ alias q="exit"
 alias cd..="cd .."
 alias ..="cd .."
 alias p="cd ~/Projects"
-alias df="cd ~/dotfiles"
+alias dotfiles="cd ~/dotfiles"
 
 # OSX
 alias showhiddenfiles="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
@@ -28,9 +24,15 @@ alias prograilspubkey="cat ~/.ssh/id_rsa_prograils.pub | pbcopy | echo '=> Publi
 
 alias getpath='echo -n $PWD|pbcopy|echo "current path copied to clipboard"'
 
-alias e=mvim
-alias v=vim
+# alias e=mvim
+# alias v=vim
+alias vim ="code"
+alias e="code ."
+alias c="code ."
 alias g=git
+alias n="nvim ."
+# https://github.com/microsoft/vscode/issues/60579#issuecomment-575277414
+alias code='open -b com.microsoft.VSCode "$@"'
 
 alias rmvimtemp='rm ~/.vim/_temp/*'
 alias aliases='e ~/.aliases'
@@ -106,6 +108,8 @@ alias committerme='git filter-branch --commit-filter '"'"'if [ "$GIT_COMMITTER_N
 alias filtercommits='authorme && committerme'
 alias pushdotfiles="git push -f https://rafaltrojanowski@github.com/rafaltrojanowski/dotfiles master:master"
 
+alias cdeploy="git push gitlab master && git push heroku master"
+
 # Python
 alias py=python
 
@@ -120,14 +124,6 @@ alias ki="kill -9"
 
 alias p/="ps aux | grep puma"
 alias ss="spring stop"
-
-# Ember
-alias es="ember serve"
-alias eb="ember build"
-alias et="ember test --serve"
-alias etf="ember test --serve --filter"
-alias ei="sudo npm install && bower install"
-alias ehg="ember help generate"
 
 # NPM
 alias npmclean="rm -rf node_modules bower_components dist tmp"
@@ -154,10 +150,11 @@ alias bnk='time ./bin/rails runner '"'"'puts "done"'"'"''
 
 alias pgrun='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-# psql -U rafaltrojanowski -d local_db_name< ~/Desktop/staging_dump.sql # dump
 
 # PG Fix
 alias pgfix='rm /usr/local/var/postgres/postmaster.pid'
 
 # https://coderwall.com/p/n1d-na/excluding-files-from-git-locally
 alias exclude="!sh -c 'echo "$1" >> .git/info/exclude'"
+
+alias withports="sudo lsof -iTCP -sTCP:LISTEN -n -P"
