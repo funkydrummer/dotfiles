@@ -39,26 +39,50 @@ plugins=(git bundler brew gem alias-tips)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 source $HOME/.aliases
 
-# dd, b, w etc. in shell
+# Bindings
+## dd, b, w etc. in shell
 bindkey -v
-# ESC -> ii
+## ESC -> jk
 bindkey -M viins 'jk' vi-cmd-mode
 bindkey '^R' history-incremental-search-backward
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-### Autojump
+# Autojump
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
+# Silver searcher
+alias ag='ag --path-to-agignore ~/.agignore'
+
+# Rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+export EDITOR=vim
+
+# Path
+## Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+## Scripts
+export PATH="$PATH:~/scripts"
+
+# Python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# Fix Python: https://stackoverflow.com/a/58445755/1590134
+export DYLD_LIBRARY_PATH=/usr/local/opt/openssl/lib:$DYLD_LIBRARY_PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/mc mc
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Experimental
 # http://stackoverflow.com/questions/4461346/slow-rails-stack
 # export RUBY_GC_HEAP_INIT_SLOTS=800000
 # export RUBY_HEAP_FREE_MIN=100000
@@ -66,21 +90,12 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 # export RUBY_GC_MALLOC_LIMIT=79000000
 
-# Rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# export DISABLE_SPRING=true
+# export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
-# Silver searcher
-alias ag='ag --path-to-agignore ~/.agignore'
-
-export EDITOR=vim
+# Rails stuff
+# export RUBYOPT='-W:no-deprecated -W:no-experimental'
+export RAILS_LOG_TO_STDOUT=1
 
 # direnv
 # eval "$(direnv hook zsh)"
-
-#scripts
-export PATH="$PATH:~/scripts"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
