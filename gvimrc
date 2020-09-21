@@ -1,10 +1,13 @@
 set background=light
 " set background=dark
- colorscheme solarized
+colorscheme solarized
+
+" A few experimental colorschemes
+colorscheme blazer
 " colorscheme amcolors
 " colorscheme molokai
 " colorscheme tatami
-" "colorscheme basic-dark
+" colorscheme basic-dark
 
 call togglebg#map("<F5>")
 

@@ -62,6 +62,8 @@ Plugin 'henrik/vim-indexed-search'
 
 " Plugin 'tpope/vim-haml'
 " Plugin 'kchmck/vim-coffee-script'
+" https://github.com/neoclide/coc.nvim
+" https://github.com/junegunn/fzf.vimk
 
 call vundle#end()
 filetype plugin indent on
@@ -97,7 +99,7 @@ set number
 syntax enable
 " set background=dark
 " color molokai
-set guifont=Monaco:h12
+set guifont=Monaco:h18
 
 " Undo
 set undofile                " Save undo's after file closes
